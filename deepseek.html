@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoRide Solutions - Masa Depan Mobilitas Perkotaan yang Hijau</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset dan Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #2E8B57;
+            --secondary: #90EE90;
+            --accent: #FFD700;
+            --light: #FFFFFF;
+            --dark: #333333;
+            --gray: #f5f5f5;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--dark);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            margin: 15px auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: var(--light);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .btn-accent {
+            background: var(--accent);
+            color: var(--dark);
+        }
+
+        /* Header & Navigation */
+        header {
+            background: var(--light);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-left: 10px;
+        }
+
+        .logo i {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1571068316344-75bc76f77890?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--light);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* Features Section */
+        .features {
+            background: var(--gray);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .vision-mission {
+            margin-top: 30px;
+        }
+
+        .vision-mission div {
+            margin-bottom: 25px;
+        }
+
+        .vision-mission h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .team-member {
+            text-align: center;
+        }
+
+        .member-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: var(--secondary);
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary);
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--gray);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .service-img {
+            height: 200px;
+            background: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--primary);
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .service-features {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .service-features li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .service-features li i {
+            color: var(--primary);
+            margin-right: 10px;
+        }
+
+        /* Portfolio Section */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-card {
+            background: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .portfolio-img {
+            height: 200px;
+            background: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary);
+        }
+
+        .portfolio-content {
+            padding: 25px;
+        }
+
+        .portfolio-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .portfolio-detail {
+            margin: 15px 0;
+        }
+
+        .portfolio-detail h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: var(--gray);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-photo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--secondary);
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .author-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .stars {
+            color: var(--accent);
+        }
+
+        .partners {
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .partners-logos {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .partner-logo {
+            width: 120px;
+            height: 80px;
+            background: var(--light);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--primary);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-form {
+            background: var(--gray);
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .contact-info {
+            padding: 20px 0;
+        }
+
+        .info-item {
+            display: flex;
+            margin-bottom: 25px;
+        }
+
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .map-container {
+            height: 300px;
+            background: var(--secondary);
+            margin-top: 30px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        /* FAQ Section */
+        .faq {
+            background: var(--gray);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--light);
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            padding: 20px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px;
+            max-height: 500px;
+        }
+
+        /* Blog Section */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .blog-card {
+            background: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .blog-img {
+            height: 200px;
+            background: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary);
+        }
+
+        .blog-content {
+            padding: 25px;
+        }
+
+        .blog-meta {
+            display: flex;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .blog-meta span {
+            margin-right: 15px;
+        }
+
+        .blog-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--light);
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: var(--light);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 0;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                flex-direction: column;
+                background: var(--light);
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+                padding: 20px 0;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .btn {
+                width: 80%;
+                max-width: 250px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .feature-card, .service-card, .portfolio-card, .testimonial-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-leaf"></i>
+                    <h1>EcoRide</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#about">Tentang Kami</a></li>
+                    <li><a href="#services">Layanan</a></li>
+                    <li><a href="#portfolio">Portofolio</a></li>
+                    <li><a href="#testimonials">Testimoni</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Masa Depan Mobilitas Perkotaan yang Hijau</h1>
+                <p>Solusi transportasi ramah lingkungan untuk kota modern</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn">Pesan Test Ride</a>
+                    <a href="#services" class="btn btn-accent">Jelajahi Produk</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Mengapa Memilih EcoRide?</h2>
+                <p>Kami menghadirkan solusi mobilitas perkotaan yang inovatif dan berkelanjutan</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Ramah Lingkungan</h3>
+                    <p>Emisi nol, kontribusi positif untuk bumi yang lebih hijau dan udara yang lebih bersih.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Teknologi Canggih</h3>
+                    <p>Baterai tahan lama, sistem pintar terintegrasi dengan aplikasi mobile untuk kemudahan penggunaan.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-piggy-bank"></i>
+                    </div>
+                    <h3>Hemat Biaya</h3>
+                    <p>Tidak perlu BBM, biaya parkir mahal, atau perawatan rumit. Efisien untuk penggunaan harian.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tentang Kami</h2>
+                <p>Mengenal lebih dalam visi, misi, dan tim di balik EcoRide Solutions</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Perjalanan Kami Menuju Mobilitas Berkelanjutan</h3>
+                    <p>EcoRide Solutions didirikan pada tahun 2020 dengan misi tunggal: menciptakan solusi mobilitas perkotaan yang berkelanjutan, terjangkau, dan inovatif. Kami percaya bahwa transportasi ramah lingkungan adalah kunci untuk kota yang lebih sehat dan hidup yang lebih baik.</p>
+                    
+                    <div class="vision-mission">
+                        <div class="vision">
+                            <h4>Visi Kami</h4>
+                            <p>Menjadi pemimpin solusi mobilitas perkotaan yang berkelanjutan di Asia Tenggara pada tahun 2030.</p>
+                        </div>
+                        <div class="mission">
+                            <h4>Misi Kami</h4>
+                            <ul>
+                                <li>Menyediakan transportasi ramah lingkungan yang terjangkau</li>
+                                <li>Mengedukasi masyarakat tentang mobilitas berkelanjutan</li>
+                                <li>Berinovasi dalam teknologi E-Bike yang efisien</li>
+                                <li>Membangun komunitas pengguna yang peduli lingkungan</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team">
+                    <h3>Tim Kami</h3>
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <div class="member-photo">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h4>Andi Wijaya</h4>
+                            <p>Founder & CEO</p>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-photo">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h4>Sari Dewi</h4>
+                            <p>Chief Marketing Officer</p>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-photo">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h4>Budi Santoso</h4>
+                            <p>Chief Technology Officer</p>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-photo">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h4>Rina Melati</h4>
+                            <p>Chief Financial Officer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Layanan & Produk</h2>
+                <p>Jelajahi rangkaian E-Bike kami yang dirancang untuk berbagai kebutuhan mobilitas perkotaan</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img">
+                        <i class="fas fa-bicycle"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>E-Bike Urban "Commuter"</h3>
+                        <p>Solusi sempurna untuk perjalanan harian di perkotaan dengan desain yang stylish dan fungsional.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Jarak tempuh: 80 km</li>
+                            <li><i class="fas fa-check"></i> Kecepatan maks: 25 km/jam</li>
+                            <li><i class="fas fa-check"></i> Baterai: Lithium 500Wh</li>
+                            <li><i class="fas fa-check"></i> Fitur: GPS, mobile app</li>
+                        </ul>
+                        <a href="#contact" class="btn">Detail & Harga</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>E-Bike Adventure "Explorer"</h3>
+                        <p>Untuk petualang kota yang ingin menjelajahi setiap sudut dengan kemampuan off-road.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Jarak tempuh: 120 km</li>
+                            <li><i class="fas fa-check"></i> Suspensi depan ganda</li>
+                            <li><i class="fas fa-check"></i> Tahan cuaca ekstrem</li>
+                            <li><i class="fas fa-check"></i> Mode off-road</li>
+                        </ul>
+                        <a href="#contact" class="btn">Detail & Harga</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <i class="fas fa-compress-arrows-alt"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>E-Bike Foldable "City Fold"</h3>
+                        <p>Solusi praktis untuk ruang terbatas, mudah dibawa dan disimpan di mana saja.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Dapat dilipat dalam 3 detik</li>
+                            <li><i class="fas fa-check"></i> Berat: 15 kg</li>
+                            <li><i class="fas fa-check"></i> Cocok untuk apartemen</li>
+                            <li><i class="fas fa-check"></i> Mudah dibawa transportasi umum</li>
+                        </ul>
+                        <a href="#contact" class="btn">Detail & Harga</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <div class="container">
+            <div class="section-title">
+                <h2>Portofolio</h2>
+                <p>Proyek-proyek sukses yang telah kami implementasikan bersama berbagai mitra</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <div class="portfolio-img">
+                        <i class="fas fa-city"></i>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Program E-Bike Sharing Jakarta</h3>
+                        <p>Implementasi sistem berbagi E-Bike di 50 titik strategis ibukota.</p>
+                        <div class="portfolio-detail">
+                            <h4>Tantangan:</h4>
+                            <p>Kemacetan parah dan polusi udara di Jakarta</p>
+                        </div>
+                        <div class="portfolio-detail">
+                            <h4>Solusi:</h4>
+                            <p>500 unit E-Bike di 50 titik strategis dengan sistem pemesanan berbasis aplikasi</p>
+                        </div>
+                        <div class="portfolio-detail">
+                            <h4>Hasil:</h4>
+                            <p>Pengurangan emisi 15 ton CO2 per tahun dan 20.000 pengguna aktif per bulan</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-card">
+                    <div class="portfolio-img">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Kampus Berkelanjutan Universitas X</h3>
+                        <p>Transformasi mobilitas kampus dengan sistem E-Bike terintegrasi.</p>
+                        <div class="portfolio-detail">
+                            <h4>Tantangan:</h4>
+                            <p>Parkir terbatas dan mobilitas antar kampus yang tidak efisien</p>
+                        </div>
+                        <div class="portfolio-detail">
+                            <h4>Solusi:</h4>
+                            <p>E-Bike kampus dengan sistem sewa khusus mahasiswa dan staf</p>
+                        </div>
+                        <div class="portfolio-detail">
+                            <h4>Hasil:</h4>
+                            <p>70% pengurangan parkir motor di kampus dan peningkatan mobilitas mahasiswa</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-card">
+                    <div class="portfolio-img">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Perusahaan Teknologi Y</h3>
+                        <p>Program mobilitas berkelanjutan untuk karyawan perusahaan teknologi.</p>
+                        <div class="portfolio-detail">
+                            <h4>Tantangan:</h4>
+                            <p>Transportasi karyawan dari stasiun ke kantor dan kebutuhan mobilitas selama jam kerja</p>
+                        </div>
+                        <div class="portfolio-detail">
+                            <h4>Solusi:</h4>
+                            <p>Program sewa E-Bike untuk karyawan dengan subsidi perusahaan</p>
+                        </div>
+                        <div class="portfolio-detail">
+                            <h4>Hasil:</h4>
+                            <p>40% karyawan beralih dari kendaraan pribadi dan peningkatan kepuasan karyawan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Apa Kata Klien Kami</h2>
+                <p>Testimoni dari berbagai mitra dan pengguna yang telah merasakan manfaat E-Bike EcoRide</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "EcoRide membantu perusahaan kami mengurangi jejak karbon dengan solusi yang efektif dan mudah diimplementasikan. Timnya sangat profesional dan responsif."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-photo">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Dian P.</h4>
+                            <p>Manager CSR, Perusahaan Teknologi Z</p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "E-Bike dari EcoRide sangat nyaman dan hemat untuk commute sehari-hari. Saya sudah menghemat ratusan ribu rupiah untuk biaya transportasi bulanan."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-photo">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Rizky M.</h4>
+                            <p>Konsultan, Pengguna Reguler</p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Layanan purna jual excellent! Tim support sangat responsif dan membantu. E-Bike kami jarang bermasalah, tapi ketika butuh servis, prosesnya cepat dan transparan."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-photo">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Sarah T.</h4>
+                            <p>Pengusaha, Mitra Corporate</p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="partners">
+                <h3>Mitra Kerja Kami</h3>
+                <div class="partners-logos">
+                    <div class="partner-logo">Perusahaan A</div>
+                    <div class="partner-logo">Perusahaan B</div>
+                    <div class="partner-logo">Perusahaan C</div>
+                    <div class="partner-logo">Pemerintah D</div>
+                    <div class="partner-logo">Institusi E</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Hubungi Kami</h2>
+                <p>Kami siap membantu Anda menemukan solusi mobilitas yang tepat untuk kebutuhan Anda</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-form

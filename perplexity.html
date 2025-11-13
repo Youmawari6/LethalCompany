@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DigiGrowth Consulting - Company Profile</title>
+  <style>
+    /* Reset & base */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background: #f8f9fa;
+      color: #343a40;
+      line-height: 1.6;
+    }
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background: #007bff;
+      color: #f8f9fa;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin-bottom: 5px;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      margin: 0 10px;
+      font-weight: 600;
+      color: #f8f9fa;
+    }
+
+    nav a:hover {
+      color: #28a745;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: #007bff url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    }
+    .btn-primary {
+      background: #28a745;
+      border: none;
+      padding: 12px 30px;
+      font-size: 1.1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      color: white;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(40,167,69,0.5);
+      transition: background 0.3s ease;
+    }
+    .btn-primary:hover {
+      background: #218838;
+    }
+
+    /* Three Features */
+    .features {
+      display: flex;
+      justify-content: space-around;
+      margin: 50px 0;
+      flex-wrap: wrap;
+      gap: 25px;
+    }
+    .feature-item {
+      background: white;
+      flex: 1 1 250px;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+      text-align: center;
+    }
+    .feature-item h3 {
+      margin-bottom: 15px;
+      color: #007bff;
+    }
+    .feature-item p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    /* Sections */
+    section {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    h2.section-title {
+      text-align: center;
+      color: #007bff;
+      margin-bottom: 25px;
+      font-size: 2rem;
+    }
+    .about-content, .services-list, .portfolio-list, .testimonials-list, .faq-list {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+      padding: 30px;
+    }
+
+    /* About Us */
+    .about-content p {
+      margin: 15px 0;
+    }
+    .team {
+      display: flex;
+      gap: 30px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .team-member {
+      text-align: center;
+      max-width: 200px;
+    }
+    .team-member img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    .team-member h4 {
+      color: #28a745;
+      margin-bottom: 6px;
+    }
+
+    /* Services */
+    .services-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 25px;
+    }
+    .service-item {
+      flex: 1 1 300px;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      transition: box-shadow 0.3s ease;
+    }
+    .service-item:hover {
+      box-shadow: 0 3px 15px rgba(0,123,255,0.3);
+    }
+    .service-item h3 {
+      color: #007bff;
+      margin-bottom: 15px;
+    }
+    .service-item p {
+      color: #555;
+    }
+
+    /* Portfolio */
+    .portfolio-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 25px;
+    }
+    .portfolio-item {
+      flex: 1 1 310px;
+      background: #f1f1f1;
+      border-radius: 8px;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .portfolio-item h4 {
+      color: #28a745;
+      margin-bottom: 8px;
+    }
+    .portfolio-item p {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    /* Contact */
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+    .contact-form {
+      background: white;
+      flex: 1 1 400px;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+    }
+    .contact-form label {
+      display: block;
+      margin: 12px 0 6px;
+      font-weight: 600;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      resize: vertical;
+      font-size: 1rem;
+    }
+    .contact-form textarea {
+      min-height: 100px;
+    }
+    .contact-form button {
+      margin-top: 15px;
+      width: 100%;
+      background: #007bff;
+      color: white;
+      font-size: 1.1rem;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .contact-form button:hover {
+      background: #0056b3;
+    }
+    .contact-info {
+      flex: 1 1 400px;
+      padding: 25px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+      font-size: 1rem;
+    }
+    iframe {
+      width: 100%;
+      border-radius: 8px;
+      margin-top: 15px;
+      height: 250px;
+      border: none;
+    }
+
+    /* Testimonials */
+    .testimonials-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 20px;
+    }
+    .testimonial-item {
+      background: white;
+      flex: 1 1 280px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+      font-style: italic;
+      position: relative;
+    }
+    .testimonial-item::before {
+      content: open-quote;
+      font-size: 3rem;
+      position: absolute;
+      top: 5px;
+      left: 10px;
+      color: #007bff;
+    }
+    .testimonial-item p {
+      margin-bottom: 15px;
+    }
+    .testimonial-author {
+      text-align: right;
+      font-weight: 600;
+      color: #28a745;
+    }
+
+    /* Partners */
+    .partners {
+      margin-top: 25px;
+      text-align: center;
+    }
+    .partner-logos img {
+      width: 100px;
+      margin: 15px 20px;
+      filter: grayscale(40%);
+      transition: filter 0.3s ease;
+      vertical-align: middle;
+    }
+    .partner-logos img:hover {
+      filter: none;
+    }
+
+    /* FAQ */
+    .faq-list div {
+      margin-bottom: 20px;
+    }
+    .faq-question {
+      font-weight: 700;
+      color: #007bff;
+      cursor: pointer;
+      background: #e9ecef;
+      padding: 12px 15px;
+      border-radius: 5px;
+    }
+    .faq-answer {
+      margin: 8px 15px 0 15px;
+      display: none;
+      color: #343a40;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #343a40;
+      color: #f8f9fa;
+      margin-top: 60px;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .features, .services-list, .portfolio-list, .testimonials-list, .team {
+        flex-direction: column;
+        align-items: center;
+      }
+      .contact-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>DigiGrowth Consulting</h1>
+    <p>Meningkatkan Bisnis Anda di Era Digital</p>
+    <nav>
+      <a href="#home">Beranda</a>
+      <a href="#about">Tentang Kami</a>
+      <a href="#services">Layanan</a>
+      <a href="#portfolio">Portofolio</a>
+      <a href="#contact">Hubungi Kami</a>
+      <a href="#testimonials">Testimoni</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <h2>Bawa Bisnis Anda ke Puncak Digital!</h2>
+    <p>Strategi pemasaran digital yang dirancang khusus untuk bisnis Anda.</p>
+    <button class="btn-primary" onclick="document.getElementById('contact-form').scrollIntoView({behavior: 'smooth'})">Mulai Konsultasi Gratis</button>
+  </section>
+
+  <section class="features container">
+    <div class="feature-item">
+      <h3>Strategi Custom</h3>
+      <p>Solusi pemasaran digital yang disesuaikan dengan kebutuhan unik bisnis Anda.</p>
+    </div>
+    <div class="feature-item">
+      <h3>Tim Ahli Berpengalaman</h3>
+      <p>Tenaga profesional yang berpengalaman membantu bisnis Anda tumbuh.</p>
+    </div>
+    <div class="feature-item">
+      <h3>Hasil Terukur</h3>
+      <p>Pendekatan berbasis data untuk memastikan hasil nyata dan berdampak.</p>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title">Tentang Kami</h2>
+    <div class="about-content container">
+      <p><strong>Visi:</strong> Menjadi partner strategis digital marketing nomor satu bagi UMKM dan startup.</p>
+      <p><strong>Misi:</strong> Memberikan solusi pemasaran digital efektif yang mudah dijangkau semua kalangan bisnis.</p>
+      <p><strong>Nilai Inti:</strong> Inovasi, Kepercayaan, Kepuasan Pelanggan, Transparansi.</p>
+
+      <h3>Tim Kami</h3>
+      <div class="team">
+        <div class="team-member">
+          <img src="https://i.pravatar.cc/160?img=1" alt="Foto Pendiri 1" />
+          <h4>Andi Sutrisno</h4>
+          <p>CEO & Strategist</p>
+        </div>
+        <div class="team-member">
+          <img src="https://i.pravatar.cc/160?img=2" alt="Foto Pendiri 2" />
+          <h4>Rina Larasati</h4>
+          <p>Manajer Proyek</p>
+        </div>
+        <div class="team-member">
+          <img src="https://i.pravatar.cc/160?img=3" alt="Foto Pendiri 3" />
+          <h4>Budi Wicaksono</h4>
+          <p>Spesialis SEO & PPC</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <h2 class="section-title">Layanan Kami</h2>
+    <div class="services-list container">
+      <div class="service-item">
+        <h3>Konsultasi Strategi Digital</h3>
+        <p>
+          Kami menyusun rencana pemasaran yang sesuai bisnis dan target pasar Anda.
+        </p>
+      </div>
+      <div class="service-item">
+        <h3>Manajemen Media Sosial</h3>
+        <p>
+          Mengelola kampanye di Facebook, Instagram, dan LinkedIn dengan konten berkualitas.
+        </p>
+      </div>
+      <div class="service-item">
+        <h3>Optimasi SEO & PPC</h3>
+        <p>
+          Meningkatkan peringkat website dan traffic lewat teknik pemasaran berbayar dan organik.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <h2 class="section-title">Portofolio</h2>
+    <div class="portfolio-list container">
+      <div class="portfolio-item">
+        <h4>Startup Fashion Lokal</h4>
+        <p><strong>Tantangan:</strong> Brand awareness rendah.</p>
+        <p><strong>Solusi:</strong> Kampanye media sosial kreatif + SEO.</p>
+        <p><strong>Hasil:</strong> 50% peningkatan traffic website.</p>
+      </div>
+      <div class="portfolio-item">
+        <h4>UMKM Kuliner Online</h4>
+        <p><strong>Tantangan:</strong> Conversion rendah.</p>
+        <p><strong>Solusi:</strong> Optimasi halaman produk dan iklan digital.</p>
+        <p><strong>Hasil:</strong> 30% peningkatan penjualan.</p>
+      </div>
+      <div class="portfolio-item">
+        <h4>Layanan Keuangan Digital</h4>
+        <p><strong>Tantangan:</strong> Engagement pengguna rendah.</p>
+        <p><strong>Solusi:</strong> Konten berkala dan iklan tertarget.</p>
+        <p><strong>Hasil:</strong> 40% engagement meningkat.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <h2 class="section-title">Testimoni Klien</h2>
+    <div class="testimonials-list container">
+      <div class="testimonial-item">
+        <p>DigiGrowth membantu startup kami tumbuh pesat dengan strategi tepat sasaran.</p>
+        <div class="testimonial-author">- Andi S.</div>
+      </div>
+      <div class="testimonial-item">
+        <p>Konsultasi yang mudah dipahami dan hasil nyata.</p>
+        <div class="testimonial-author">- Rina L.</div>
+      </div>
+      <div class="testimonial-item">
+        <p>SEO dan PPC mereka sangat efektif, saya rekomendasikan.</p>
+        <div class="testimonial-author">- Budi W.</div>
+      </div>
+    </div>
+    <div class="partners container">
+      <h3>Partner Kami</h3>
+      <div class="partner-logos">
+        <img src="https://dummyimage.com/100x40/007bff/ffffff&text=StartupHub" alt="Startup Hub" />
+        <img src="https://dummyimage.com/100x40/28a745/ffffff&text=FintechID" alt="Fintech ID" />
+        <img src="https://dummyimage.com/100x40/007bff/ffffff&text=CreativeAgency" alt="Creative Agency" />
+        <img src="https://dummyimage.com/100x40/28a745/ffffff&text=TechInnovators" alt="Tech Innovators" />
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Hubungi Kami</h2>
+    <div class="contact-container container">
+      <form id="contact-form" class="contact-form" onsubmit="return validateForm()">
+        <label for="name">Nama Lengkap</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="phone">Nomor Telepon</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9+\-\s]+" required />
+
+        <label for="message">Pesan</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Kirim Pesan</button>
+      </form>
+
+      <div class="contact-info">
+        <h3>Alamat Kami</h3>
+        <p>Jl. Digital Startup No. 45, Jakarta, Indonesia</p>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.1164949101725!2d106.82715311526882!3d-6.175392862816756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f43af13e46ff%3A0x1760cfcf2a9a6313!2sMonas%20-%20Monumen%20Nasional!5e0!3m2!1sid!2sid!4v1607668398027!5m2!1sid!2sid"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2 class="section-title">Pertanyaan Umum (FAQ)</h2>
+    <div class="faq-list container">
+      <div>
+        <div class="faq-question">Apa saja layanan utama DigiGrowth?</div>
+        <div class="faq-answer">Kami menyediakan konsultasi strategi digital, manajemen media sosial, dan optimasi SEO & PPC.</div>
+      </div>
+      <div>
+        <div class="faq-question">Berapa lama proses konsultasi?</div>
+        <div class="faq-answer">Biasanya 1-2 minggu sampai strategi siap.</div>
+      </div>
+      <div>
+        <div class="faq-question">Apakah ada biaya tambahan?</div>
+        <div class="faq-answer">Tidak ada biaya tersembunyi, semua disepakati sebelum proses.</div>
+      </div>
+      <div>
+        <div class="faq-question">Bagaimana cara memulai kerja sama?</div>
+        <div class="faq-answer">Isi form kontak dan kami akan hubungi Anda segera.</div>
+      </div>
+      <div>
+        <div class="faq-question">Apakah hasil selalu dijamin?</div>
+        <div class="faq-answer">
+          Kami memberikan strategi terbaik tapi hasil tergantung banyak faktor bisnis.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 DigiGrowth Consulting. All Rights Reserved.
+  </footer>
+
+  <script>
+    // FAQ toggle
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const answer = q.nextElementSibling;
+        const isVisible = answer.style.display === 'block';
+        document.querySelectorAll('.faq-answer').forEach(a => (a.style.display = 'none'));
+        answer.style.display = isVisible ? 'none' : 'block';
+      });
+    });
+
+    // Simple form validation (html5 does most)
+    function validateForm() {
+      const form = document.getElementById('contact-form');
+      if (!form.checkValidity()) {
+        alert('Mohon lengkapi semua kolom dengan informasi yang valid.');
+        return false;
+      }
+      alert('Terima kasih telah menghubungi kami! Pesan Anda telah terkirim.');
+      form.reset();
+      return false; // Prevent real submission
+    }
+  </script>
+</body>
+</html>

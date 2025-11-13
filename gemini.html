@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoRide Mobility - Moving Forward, Breathing Cleaner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ----------------------- */
+        /* 1. VARIABEL & RESET DASAR */
+        /* ----------------------- */
+        :root {
+            --color-primary: #6AA84F; /* Hijau Terang */
+            --color-secondary: #333333; /* Abu-abu Gelap */
+            --color-light: #FFFFFF;
+            --color-text: #444444;
+            --font-main: 'Poppins', sans-serif;
+            --space-lg: 40px;
+            --space-md: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--color-text);
+            line-height: 1.6;
+            background-color: #f7f7f7;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--color-primary);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3 {
+            color: var(--color-secondary);
+            margin-bottom: var(--space-md);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--color-primary);
+            color: var(--color-light);
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: #5b8f44; /* Sedikit lebih gelap */
+        }
+
+        /* ----------------------- */
+        /* 2. HEADER & NAVIGASI */
+        /* ----------------------- */
+        header {
+            background-color: var(--color-light);
+            padding: var(--space-md) 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--color-secondary);
+        }
+
+        .logo span {
+            color: var(--color-primary);
+        }
+
+        .nav-links li {
+            display: inline-block;
+            margin-left: var(--space-md);
+        }
+
+        .nav-links a {
+            color: var(--color-secondary);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-primary);
+        }
+
+        /* Hamburger Menu (Mobile) */
+        .menu-toggle {
+            display: none;
+            font-size: 1.8em;
+            cursor: pointer;
+            color: var(--color-secondary);
+        }
+
+        /* ----------------------- */
+        /* 3. HERO SECTION (HOME) */
+        /* ----------------------- */
+        .hero-section {
+            background: url('https://via.placeholder.com/1200x600/333333/FFFFFF?text=E-Bike+in+City+Background') no-repeat center center/cover;
+            color: var(--color-light);
+            text-align: center;
+            padding: 100px 0;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-content {
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: var(--space-lg);
+            border-radius: 10px;
+        }
+
+        .hero-section h1 {
+            color: var(--color-light);
+            font-size: 2.8em;
+            margin-bottom: var(--space-md);
+        }
+
+        .hero-section p {
+            font-size: 1.2em;
+            margin-bottom: var(--space-lg);
+        }
+        
+        /* ----------------------- */
+        /* 4. POIN UNGGULAN */
+        /* ----------------------- */
+        .features-section {
+            padding: var(--space-lg) 0;
+            text-align: center;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md);
+            margin-top: var(--space-md);
+        }
+
+        .feature-card {
+            background-color: var(--color-light);
+            padding: var(--space-md);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .feature-card i {
+            font-size: 2em;
+            color: var(--color-primary);
+            margin-bottom: 10px;
+        }
+
+        /* ----------------------- */
+        /* 5. CONTACT SECTION */
+        /* ----------------------- */
+        #contact {
+            background-color: var(--color-light);
+            padding: var(--space-lg) 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-lg);
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: var(--space-md);
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+        }
+
+        .map-container {
+            height: 400px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* ----------------------- */
+        /* 6. FOOTER */
+        /* ----------------------- */
+        footer {
+            background-color: var(--color-secondary);
+            color: var(--color-light);
+            text-align: center;
+            padding: var(--space-md) 0;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: var(--color-light);
+            text-decoration: underline;
+        }
+
+        /* ----------------------- */
+        /* 7. MEDIA QUERIES (RESPONSIVITAS) */
+        /* ----------------------- */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                background-color: var(--color-light);
+                position: absolute;
+                top: 70px;
+                left: 0;
+                padding: var(--space-md) 0;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links li {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .features-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-section h1 {
+                font-size: 2em;
+            }
+            
+            .map-container {
+                height: 300px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="container nav-content">
+            <div class="logo">EcoRide<span>Mobility</span></div>
+            <nav>
+                <ul class="nav-links" id="navbarNav">
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#about">Tentang Kami</a></li>
+                    <li><a href="#products">E-Bikes</a></li>
+                    <li><a href="#contact">Hubungi Kami</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero-section">
+            <div class="container hero-content">
+                <h1>EcoRide: Solusi Mobilitas Perkotaan Anda.</h1>
+                <p>Moving Forward, Breathing Cleaner. Temukan cara baru berkendara di kota dengan e-bike ramah lingkungan kami.</p>
+                <a href="#products" class="cta-button">Lihat Model Kami</a>
+            </div>
+        </section>
+
+        <section class="features-section">
+            <div class="container">
+                <h2>Mengapa Memilih EcoRide?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-bolt"></i>
+                        <h3>Hemat Energi & Biaya</h3>
+                        <p>Mengurangi pengeluaran transportasi harian secara signifikan.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-bicycle"></i>
+                        <h3>Desain Ergonomis & Stylish</h3>
+                        <p>Kenyamanan berkendara maksimal dengan tampilan modern.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-battery-full"></i>
+                        <h3>Garansi Baterai Terdepan</h3>
+                        <p>Kualitas baterai terbaik dengan garansi resmi dan layanan purna jual.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Hubungi Kami</h2>
+                <div class="contact-grid">
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <label for="name">Nama Lengkap</label>
+                            <input type="text" id="name" name="name" required>
+                            
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                            
+                            <label for="subject">Subjek</label>
+                            <input type="text" id="subject" name="subject" required>
+                            
+                            <label for="message">Pesan</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            
+                            <button type="submit" class="cta-button">Kirim Pesan</button>
+                            <p id="formMessage" style="margin-top: 10px; font-weight: 600; color: var(--color-primary); display: none;">Pesan Anda telah terkirim. Terima kasih!</p>
+                        </form>
+                    </div>
+
+                    <div>
+                        <h3>Temukan Kami</h3>
+                        <p><strong>Alamat Fiktif:</strong> Jl. Anggrek No. 10, Jakarta Pusat 10210.</p>
+                        <div class="map-container">
+                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.697413645063!2d106.82093551532156!3d-6.173796595514697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4e13!3m3!1m2!1s0x2e69f5d1e43c683b%3A0x633d7b814676150a!2sMonumen%20Nasional!5e0!3m2!1sid!2sid!4v1636780000000!5m2!1sid!2sid" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 EcoRide Mobility. All Rights Reserved. | <a href="#">Kebijakan Privasi</a></p>
+        </div>
+    </footer>
+    
+    <script>
+        // Fungsionalitas Hamburger Menu (Responsif)
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            var nav = document.getElementById('navbarNav');
+            nav.classList.toggle('active');
+        });
+
+        // Fungsionalitas Formulir Kontak Sederhana
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah form submit default (reload halaman)
+            
+            // Validasi Sederhana
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            
+            if (name && email) {
+                // Dalam skenario nyata, data akan dikirim ke server di sini (AJAX/Fetch)
+                
+                // Tampilkan Pesan Sukses Fiktif
+                var formMessage = document.getElementById('formMessage');
+                formMessage.style.display = 'block';
+                
+                // Reset Form
+                this.reset();
+                
+                // Sembunyikan pesan sukses setelah beberapa detik
+                setTimeout(function() {
+                    formMessage.style.display = 'none';
+                }, 5000);
+            } else {
+                alert('Mohon lengkapi semua bidang yang wajib diisi.');
+            }
+        });
+    </script>
+</body>
+</html>

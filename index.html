@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Nama Anda] | SMK Co-Founder - Modern Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Variabel Warna Modern Light Mode */
+        :root {
+            --color-light: #FFFFFF; /* Latar belakang Putih */
+            --color-dark: #2C3E50;  /* Teks dan Elemen Gelap */
+            --color-primary: #3498DB; /* Warna Aksen Biru (Modern) */
+            --color-secondary: #E74C3C; /* Warna Aksen Kedua (Merah/Kontras) */
+            --color-shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        /* RESET & BASE STYLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--color-light);
+            color: var(--color-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+            color: var(--color-dark);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            padding: 80px 20px;
+            min-height: 80vh;
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            margin: 10px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 600;
+            border: 2px solid var(--color-primary);
+            background-color: var(--color-primary);
+            color: var(--color-light);
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px var(--color-shadow);
+        }
+
+        .btn:hover {
+            background-color: var(--color-light);
+            color: var(--color-primary);
+            box-shadow: 0 6px 15px rgba(52, 152, 219, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* === HERO SECTION === */
+        #hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #F8F9FA; /* Sedikit off-white */
+        }
+
+        #hero h1 {
+            font-size: clamp(2rem, 7vw, 4rem);
+            margin-bottom: 10px;
+            color: var(--color-dark);
+        }
+
+        #hero p {
+            font-size: clamp(1rem, 3vw, 1.25rem);
+            color: var(--color-dark);
+            margin-bottom: 30px;
+            max-width: 700px;
+        }
+
+        /* === LINK BUTTONS SECTION (8 Tombol) === */
+        #link-buttons {
+            padding: 40px 20px;
+            background-color: var(--color-light);
+            border-bottom: 1px solid #ECF0F1;
+            text-align: center;
+        }
+
+        #link-buttons h2 {
+            margin-bottom: 30px;
+            color: var(--color-primary);
+        }
+
+        .link-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .link-grid a {
+            display: block;
+            padding: 15px 10px;
+            background-color: #ECF0F1;
+            color: var(--color-dark);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 5px var(--color-shadow);
+        }
+
+        .link-grid a:hover {
+            background-color: var(--color-primary);
+            color: var(--color-light);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        /* === ABOUT SECTION === */
+        #about {
+            background-color: var(--color-light);
+        }
+
+        #about h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--color-primary);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .skill-item {
+            text-align: center;
+            padding: 15px;
+            border: 1px solid #BDC3C7;
+            background-color: #ECF0F1;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .skill-item:hover {
+            background-color: var(--color-primary);
+            color: var(--color-light);
+            transform: translateY(-3px);
+        }
+
+        /* === PORTFOLIO SECTION === */
+        #portfolio {
+            background-color: #F8F9FA;
+            text-align: center;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .project-card {
+            background-color: var(--color-light);
+            border: 1px solid #ECF0F1;
+            padding: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: left;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px var(--color-shadow);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px var(--color-shadow);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .project-card h3 {
+            color: var(--color-primary);
+            margin-bottom: 10px;
+        }
+
+        /* === CONTACT/FOOTER SECTION === */
+        #contact {
+            background-color: var(--color-dark);
+            color: var(--color-light);
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        #contact h2 {
+            margin-bottom: 20px;
+            color: var(--color-light);
+        }
+
+        .social-links a {
+            color: var(--color-light);
+            font-size: 1.8rem;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--color-primary);
+        }
+
+        footer {
+            padding: 15px 20px;
+            background-color: #34495E;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #BDC3C7;
+        }
+
+        /* MEDIA QUERIES UNTUK RESPONSIVITAS */
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 20px;
+            }
+
+            .link-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .link-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section id="hero" class="container">
+        <h1>[Nama Anda] - Co-Founder | Inovator Digital.</h1>
+        <p>Remaja SMK yang fokus pada pengembangan web yang bersih, cepat, dan modern. Saya adalah Co-Founder [Nama Perusahaan Anda].</p>
+        <div>
+            <a href="#portfolio" class="btn">Lihat Proyek</a>
+            <a href="#contact" class="btn" style="background-color: var(--color-secondary); border-color: var(--color-secondary);">Mulai Diskusi</a>
+        </div>
+    </section>
+
+    <section id="link-buttons">
+        <h2>Akses Cepat ke Ekosistem Digital</h2>
+        <div class="link-grid">
+            <a href="chatgpt.html" target="_blank">Chatgpt</a>
+            <a href="deepseek.html" target="_blank">Deepseek</a>
+            <a href="gemini.html" target="_blank">Gemini</a>
+            <a href="meta.html" target="_blank">Meta</a>
+            <a href="perplexity.html" target="_blank">Perplexity</a>
+            <a href="phind.html" target="_blank">Phind</a>
+            <a href="You-Ai.html" target="_blank">You-Ai</a>
+            <a href="z-ai.html" target="_blank">Z-ai</a>
+        </div>
+    </section>
+
+    <section id="about" class="container">
+        <h2>:: Profil dan Keahlian ::</h2>
+        <p>
+            **[Placeholder Text]** - Berbekal ilmu dari SMK, saya mengasah kemampuan untuk membangun solusi web yang tidak hanya estetis tetapi juga fungsional dan *user-friendly*. Sebagai *Co-Founder*, saya bertanggung jawab untuk memastikan bahwa setiap proyek yang kami kerjakan memiliki standar kualitas coding yang tinggi.
+        </p>
+
+        <h3>Keahlian Teknis:</h3>
+        <div class="skills-grid">
+            <div class="skill-item">HTML & CSS (Modern)</div>
+            <div class="skill-item">JavaScript (ES6+)</div>
+            <div class="skill-item">Desain Responsif</div>
+            <div class="skill-item">UI/UX (Figma)</div>
+            <div class="skill-item">Framework CSS (Bootstrap/Tailwind)</div>
+            <div class="skill-item">Git/GitHub</div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="container">
+        <h2>:: Proyek Pilihan ::</h2>
+        <div class="portfolio-grid">
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400x180/F8F9FA/3498DB?text=Modern+App+UI" alt="Project Placeholder">
+                <h3>Sistem E-Learning SMK</h3>
+                <p>[Placeholder Deskripsi] Pengembangan antarmuka yang bersih dan intuitif untuk platform belajar online.</p>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400x180/F8F9FA/E74C3C?text=Company+Website" alt="Project Placeholder">
+                <h3>Landing Page Perusahaan</h3>
+                <p>[Placeholder Deskripsi] Desain website perusahaan yang minimalis dan berfokus pada konversi dengan performa tinggi.</p>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400x180/F8F9FA/2C3E50?text=Data+Dashboard" alt="Project Placeholder">
+                <h3>Dashboard Analisis Data</h3>
+                <p>[Placeholder Deskripsi] Pembuatan dashboard yang ringan dan mudah dibaca untuk memvisualisasikan data proyek.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>:: Mari Terhubung ::</h2>
+        <p>Kirimkan email untuk peluang kolaborasi atau pertanyaan. Saya siap membantu proyek Anda.</p>
+        <p>Email: **[Email Anda]** | Lokasi: **[Kota Anda]**</p>
+        
+        <div class="social-links">
+            <a href="[URL_LinkedIn]" aria-label="LinkedIn">in</a>
+            <a href="[URL_GitHub]" aria-label="GitHub">Gh</a>
+            <a href="[URL_Instagram]" aria-label="Instagram">Ig</a>
+        </div>
+    </section>
+    
+    <footer>
+        &copy; 2025 [Nama Anda]. Code & Design by [Nama Perusahaan Anda].
+    </footer>
+
+</body>
+</html>

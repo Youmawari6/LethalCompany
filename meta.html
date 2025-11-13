@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Impuls</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4567b7;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        header nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        header nav a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        #home {
+            background-image: linear-gradient(to bottom, #4567b7, #ffffff);
+            background-size: 100% 300px;
+            background-position: 0% 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+        }
+
+        #home h1 {
+            font-size: 48px;
+        }
+
+        #about {
+            padding: 50px;
+        }
+
+        #about img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        #services {
+            padding: 50px;
+        }
+
+        #services ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #services li {
+            margin-bottom: 20px;
+        }
+
+        #portfolio {
+            padding: 50px;
+        }
+
+        #portfolio ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #portfolio li {
+            margin-bottom: 20px;
+        }
+
+        #portfolio img {
+            width: 100px;
+            height: 100px;
+        }
+
+        #contact {
+            padding: 50px;
+        }
+
+        #contact form {
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #contact input, #contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+        }
+
+        #contact button {
+            background-color: #4567b7;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #map {
+            width: 100%;
+            height: 300px;
+            background-color: #ccc;
+        }
+
+        footer {
+            background-color: #4567b7;
+            color: #ffffff;
+            padding: 10px;
+            text-align: center;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#about">Tentang Kami</a></li>
+                <li><a href="#services">Layanan</a></li>
+                <li><a href="#portfolio">Portofolio</a></li>
+                <li><a href="#contact">Hubungi Kami</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home">
+        <h1>Solusi Digital Marketing untuk Bisnis Anda</h1>
+        <p>Mendorong Bisnis Anda ke Level Berikutnya</p>
+        <button>Mulai Konsultasi Sekarang</button>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>Tentang Kami</h2>
+        <p>Visi: Menjadi mitra digital marketing terpercaya bagi bisnis kecil dan menengah</p>
+        <p>Misi: Membantu bisnis kecil dan menengah meningkatkan kehadiran online dan meningkatkan penjualan</p>
+        <p>Nilai Inti: Profesionalisme, Kreativitas, dan Integritas</p>
+        <img src="foto-tim.jpg" alt="Foto Tim">
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Layanan</h2>
+        <ul>
+            <li>
+                <h3>Strategi Digital Marketing</h3>
+                <p>Deskripsi layanan strategi digital marketing</p>
+            </li>
+            <li>
+                <h3>Analisis Data</h3>
+                <p>Deskripsi layanan analisis data</p>
+            </li>
+            <li>
+                <h3>Pembuatan Konten</h3>
+                <p>Deskripsi layanan pembuatan konten</p>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <h2>Portofolio</h2>
+        <ul>
+            <li>
+                <img src="proyek-1.jpg" alt="Proyek 1">
+                <h3>Meningkatkan penjualan online sebesar 300% untuk Klien A</h3>
+                <p>Deskripsi proyek</p>
+            </li>
+            <li>
+                <img src="proyek-2.jpg" alt="Proyek 2">
+                <h3>Meningkatkan traffic website sebesar 50% untuk Klien B</h3>
+                <p>Deskripsi proyek</p>
+            </li>
+            <li>
+                <img src="proyek-3.jpg" alt="Proyek 3">
+                <h3>Meningkatkan engagement media sosial sebesar 200% untuk Klien C</h3>
+                <p>Deskripsi proyek</p>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Hubungi Kami</h2>
+        <form>
+            <input type="text" name="nama" placeholder="Nama">
+            <input type="email" name="email" placeholder="Email">
+            <textarea name="pesan" placeholder="Pesan"></textarea>
+            <button>Kirim</button>
+        </form>
+        <p>Alamat: Jl. Digital No. 123, Jakarta</p>
+        <div id="map"></div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2023 Digital Impuls</p>
+    </footer>
+</body>
+</html>

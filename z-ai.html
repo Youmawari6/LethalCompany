@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoltCycle Indonesia - Tenaga Listrik, Jiwa Petualang</title>
+    <meta name="description" content="Company Profile VoltCycle Indonesia. Penyedia E-Bike ramah lingkungan dengan teknologi canggih dan desain ergonomis untuk mobilitas urban Anda.">
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- CSS Variables & Global Styles --- */
+        :root {
+            --primary-green: #2A6F3E;
+            --secondary-yellow: #FFC107;
+            --dark-gray: #212121;
+            --light-gray: #F5F5F5;
+            --text-color: #333;
+            --font-family: 'Poppins', sans-serif;
+            --container-width: 1200px;
+            --transition: all 0.3s ease-in-out;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; color: var(--primary-green); text-align: center; margin-bottom: 2rem; }
+        h3 { font-size: 1.25rem; color: var(--primary-green); }
+
+        section {
+            padding: 60px 0;
+        }
+
+        .section-light { background-color: #fff; }
+        .section-dark { background-color: var(--light-gray); }
+
+        /* --- Header & Navigation --- */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            color: var(--secondary-yellow);
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--primary-green);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--dark-gray);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80') no-repeat center center/cover;
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-block;
+            margin: 5px;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary-yellow);
+            color: var(--dark-gray);
+        }
+        .btn-primary:hover {
+            background-color: #e0a800;
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border-color: white;
+        }
+        .btn-secondary:hover {
+            background-color: white;
+            color: var(--dark-gray);
+        }
+
+        /* --- Features Section --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .feature-card i {
+            font-size: 3rem;
+            color: var(--secondary-yellow);
+            margin-bottom: 1rem;
+        }
+
+        /* --- About Section --- */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        .about-text h2 { text-align: left; margin-bottom: 1rem; }
+        .core-values {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .value-card {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .value-card h4 {
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+        }
+
+        /* --- Team Section --- */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        .team-member img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 5px solid var(--light-gray);
+        }
+
+        /* --- Services/Products Section --- */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .product-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: var(--transition);
+            text-align: center;
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .product-card-content {
+            padding: 1.5rem;
+        }
+        .product-card h3 {
+            margin-top: 0;
+        }
+        .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin: 1rem 0;
+        }
+
+        /* --- Portfolio Section --- */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .portfolio-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: var(--transition);
+        }
+        .portfolio-card:hover {
+            transform: scale(1.03);
+        }
+        .portfolio-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .portfolio-card-content {
+            padding: 1.5rem;
+        }
+        .portfolio-card h3 {
+            margin-top: 0;
+        }
+        .portfolio-card p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* --- Testimonials Section --- */
+        .testimonials-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .testimonial-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+        .testimonial-card p {
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        .testimonial-card h4 {
+            font-weight: 600;
+            color: var(--primary-green);
+        }
+        .testimonial-card .title {
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* --- Blog Section --- */
+        .blog-article {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .blog-article img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+        .blog-meta {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 1.5rem;
+        }
+
+        /* --- FAQ Section --- */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: #fff;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .faq-question {
+            width: 100%;
+            padding: 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: left;
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--dark-gray);
+        }
+        .faq-question i {
+            transition: var(--transition);
+        }
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 1.5rem;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 500px; /* Arbitrary large value */
+            padding: 0 1.5rem 1.5rem 1.5rem;
+        }
+
+        /* --- Contact Section --- */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        .contact-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .contact-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: var(--font-family);
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .contact-info-item i {
+            font-size: 1.5rem;
+            color: var(--primary-green);
+        }
+        .map-container {
+            width: 100%;
+            height: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid var(--primary-green);
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* --- Footer --- */
+        .footer {
+            background-color: var(--dark-gray);
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        .social-links a {
+            color: #fff;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: var(--transition);
+        }
+        .social-links a:hover {
+            color: var(--secondary-yellow);
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: #fff;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+                padding: 2rem 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .hero-content h1 { font-size: 2.5rem; }
+            .hero-content p { font-size: 1rem; }
+
+            .about-content,
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .about-content { text-align: center; }
+            .about-text h2 { text-align: center; }
+            .core-values { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- =================== HEADER =================== -->
+    <header class="header">
+        <nav class="container">
+            <a href="#beranda" class="logo">
+                <i class="fas fa-bolt"></i> VoltCycle Indonesia
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#beranda" class="nav-link">Beranda</a></li>
+                <li><a href="#tentang-kami" class="nav-link">Tentang Kami</a></li>
+                <li><a href="#layanan" class="nav-link">Layanan</a></li>
+                <li><a href="#portofolio" class="nav-link">Portofolio</a></li>
+                <li><a href="#blog" class="nav-link">Blog</a></li>
+                <li><a href="#hubungi-kami" class="nav-link">Hubungi Kami</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- =================== HERO SECTION =================== -->
+        <section id="beranda" class="hero">
+            <div class="hero-content">
+                <h1>Berkendara Masa Depan, Mulai Hari Ini.</h1>
+                <p>Solusi mobilitas urban yang ramah lingkungan, efisien, dan penuh gaya.</p>
+                <a href="#layanan" class="btn btn-primary">Jelajahi Koleksi</a>
+                <a href="#hubungi-kami" class="btn btn-secondary">Test Ride Gratis</a>
+            </div>
+        </section>
+
+        <!-- =================== FEATURES SECTION =================== -->
+        <section class="section-dark">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-leaf"></i>
+                        <h3>Ramah Lingkungan</h3>
+                        <p>Nol emisi, satu langkah untuk bumi yang lebih baik.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-microchip"></i>
+                        <h3>Teknologi Canggih</h3>
+                        <p>Baterai tahan lama dengan fitur cerdas terintegrasi.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-user-check"></i>
+                        <h3>Desain Ergonomis</h3>
+                        <p>Kenyamanan maksimal untuk setiap perjalanan.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================== ABOUT US SECTION =================== -->
+        <section id="tentang-kami" class="section-light">
+            <div class="container">
+                <h2>Tentang VoltCycle Indonesia</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Visi & Misi</h3>
+                        <p><strong>Visi:</strong> Menjadi leader solusi mobilitas listrik di Indonesia yang mendukung gaya hidup berkelanjutan.</p>
+                        <p><strong>Misi:</strong> Menyediakan e-bike berkualitas tinggi, inovatif, dan terjangkau untuk setiap lapisan masyarakat, serta membangun ekosistem transportasi yang hijau.</p>
+                    </div>
+                    <div class="core-values">
+                        <div class="value-card">
+                            <h4><i class="fas fa-lightbulb"></i> Inovasi</h4>
+                            <p>Selalu berada di garis depan teknologi e-bike.</p>
+                        </div>
+                        <div class="value-card">
+                            <h4><i class="fas fa-seedling"></i> Keberlanjutan</h4>
+                            <p>Komitmen kami terhadap planet bumi.</p>
+                        </div>
+                        <div class="value-card">
+                            <h4><i class="fas fa-award"></i> Kualitas</h4>
+                            <p>Produk yang andal dan tahan lama.</p>
+                        </div>
+                        <div class="value-card">
+                            <h4><i class="fas fa-smile"></i> Kepuasan Pelanggan</h4>
+                            <p>Prioritas utama dalam setiap layanan.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-grid" style="margin-top: 3rem;">
+                    <div class="team-member">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="CEO">
+                        <h4>Ahmad Fadli</h4>
+                        <p>Chief Executive Officer</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="CTO">
+                        <h4>Siti Rahayu</h4>
+                        <p>Chief Technology Officer</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://randomuser.me/api/portraits/men/68.jpg" alt="Head of Design">
+                        <h4>Budi Prasetyo</h4>
+                        <p>Head of Design</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================== SERVICES/PRODUCTS SECTION =================== -->
+        <section id="layanan" class="section-dark">
+            <div class="container">
+                <h2>Koleksi E-Bike Kami</h2>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1571068316344-75bc66f4382a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="VoltCycle Urban">
+                        <div class="product-card-content">
+                            <h3>VoltCycle Urban</h3>
+                            <p>Agil dan stylish, sempurna untuk mobilitas sehari-hari di perkotaan.</p>
+                            <div class="price">Rp 15.000.000</div>
+                            <a href="#hubungi-kami" class="btn btn-primary">Pelajari Lebih Lanjut</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="VoltCycle Trail">
+                        <div class="product-card-content">
+                            <h3>VoltCycle Trail</h3>
+                            <p>Kuat dan bertenaga, siap taklukkan medan off-road Anda.</p>
+                            <div class="price">Rp 22.000.000</div>
+                            <a href="#hubungi-kami" class="btn btn-primary">Pelajari Lebih Lanjut</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1502744688674-c619d1586c9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="VoltCycle Fold">
+                        <div class="product-card-content">
+                            <h3>VoltCycle Fold</h3>
+                            <p>Kompak dan ringan, solusi transportasi yang mudah dibawa kemana saja.</p>
+                            <div class="price">Rp 12.500.000</div>
+                            <a href="#hubungi-kami" class="btn btn-primary">Pelajari Lebih Lanjut</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================== PORTFOLIO SECTION =================== -->
+        <section id="portofolio" class="section-light">
+            <div class="container">
+                <h2>Cerita Kepuasan Klien</h2>
+                <div class="portfolio-grid">
+                    <div class="portfolio-card">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Kolaborasi Go-Jek">
+                        <div class="portfolio-card-content">
+                            <h3>Kolaborasi dengan Go-Jek</h3>
+                            <p><strong>Tantangan:</strong> Mengurangi emisi karbon dari armada pengiriman.</p>
+                            <p><strong>Solusi:</strong> Modifikasi 100 unit VoltCycle Cargo.</p>
+                            <p><strong>Hasil:</strong> Pengurangan emisi 30% dan efisiensi biaya 15%.</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-card">
+                        <img src="https://images.unsplash.com/photo-1571068316344-75bc66f4382a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Program Kampus Hijau">
+                        <div class="portfolio-card-content">
+                            <h3>Program 'Kampus Hijau' UI</h3>
+                            <p><strong>Tantangan:</strong> Mendorong transportasi berkelanjutan di area kampus.</p>
+                            <p><strong>Solusi:</strong> Instalasi stasiun sewa dan aplikasi peminjaman.</p>
+                            <p><strong>Hasil:</strong> Adopsi oleh lebih dari 2000 mahasiswa.</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-card">
+                        <img src="https://images.unsplash.com/photo-1502744688674-c619d1586c9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Pariwisata Yogyakarta">
+                        <div class="portfolio-card-content">
+                            <h3>Pariwisata Berkelanjutan di Yogyakarta</h3>
+                            <p><strong>Tantangan:</strong> Wisata bebas polusi dan dekat dengan budaya lokal.</p>
+                            <p><strong>Solusi:</strong> Kemitraan untuk paket "E-Bike Heritage Tour".</p>
+                            <p><strong>Hasil:</strong> Rating 4.9/5.0 dan liputan media travel positif.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================== TESTIMONIALS SECTION =================== -->
+        <section id="testimoni" class="section-dark">
+            <div class="container">
+                <h2>Apa Kata Mereka</h2>
+                <div class="testimonials-container">
+                    <div class="testimonial-card">
+                        <p>"VoltCycle Urban mengubah cara saya berangkat kerja. Lebih cepat, sehat, dan menyenangkan!"</p>
+                        <h4>Budi Santoso</h4>
+                        <p class="title">Profesional Muda</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Kualitas baterainya luar biasa. Sekali charge bisa untuk perjalanan seminggu."</p>
+                        <h4>Siti Nurhaliza</h4>
+                        <p class="title">Ibu Rumah Tangga</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Pelayanan after-salesnya memuaskan. Servis cepat dan suku cadang mudah didapat."</p>
+                        <h4>Rizky Firmansyah</h4>
+                        <p class="title">Penggiat Touring</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================== BLOG SECTION =================== -->
+        <section id="blog" class="section-light">
+            <div class="container">
+                <h2>Berita & Artikel</h2>
+                <article class="blog-article">
+                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Penghargaan Inovasi Hijau">
+                    <h3>VoltCycle Indonesia Raih Penghargaan 'Inovasi Hijau 2024'</h3>
+                    <div class="blog-meta">
+                        <i class="far fa-calendar"></i> 15 Maret 2024 | <i class="far fa-user"></i> Tim Marketing VoltCycle
+                    </div>
+                    <p>Jakarta - VoltCycle Indonesia dengan bangga mengumumkan telah meraih penghargaan prestisius "Inovasi Hijau 2024" dalam kategori Transportasi Berkelanjutan. Penghargaan ini diberikan oleh EcoHub Indonesia sebagai bentuk apresiasi atas dedikasi kami dalam menciptakan solusi mobilitas yang tidak hanya inovatif tetapi juga berdampak positif bagi lingkungan.</p>
+                    <p>CEO kami, Bapak Ahmad Fadli, dalam sambutannya mengatakan, "Penghargaan ini adalah bukti nyata bahwa kami berada di jalur yang benar. Ini adalah motivasi bagi seluruh tim VoltCycle untuk terus berinovasi dan memberikan yang terbaik untuk konsumen dan bumi kita."</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- =================== FAQ SECTION =================== -->
+        <section id="faq" class="section-dark">
+            <div class="container">
+                <h2>Pertanyaan yang Sering Diajukan</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question">Seberapa jauh jarak tempuh sekali charge?</button>
+                        <div class="faq-answer">
+                            <p>Tergantung model dan kondisi penggunaan. Untuk pemakaian normal di perkotaan, VoltCycle Urban dapat menempuh jarak hingga 80 km dalam sekali pengisian daya penuh.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Berapa lama waktu pengisian daya baterai?</button>
+                        <div class="faq-answer">
+                            <p>Waktu pengisian daya dari kosong hingga penuh membutuhkan waktu sekitar 3-5 jam, tergantung pada tipe charger yang digunakan.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Apakah e-bike VoltCycle tahan hujan?</button>
+                        <div class="faq-answer">
+                            <p>Ya, semua komponen elektronik penting pada e-bike kami memiliki sertifikasi tahan air IPX4, yang berarti aman dari cipratan air dari segala arah. Namun, disarankan untuk tidak mengendus di bawah hujan deras.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Apakah tersedia layanan servis?</button>
+                        <div class="faq-answer">
+                            <p>Tentu saja. Kami memiliki pusat servis resmi di 10 kota besar Indonesia dan bekerja sama dengan mitra bengkel di berbagai lokasi untuk memastikan layanan purnajual yang mudah diakses.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Bagaimana cara melakukan pemesanan?</button>
+                        <div class="faq-answer">
+                            <p>Anda dapat melakukan pemesanan langsung melalui website kami, menghubungi tim sales via telepon atau email, atau mengunjungi showroom resmi kami untuk melihat produk secara langsung.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================== CONTACT SECTION =================== -->
+        <section id="hubungi-kami" class="section-light">
+            <div class="container">
+                <h2>Hubungi Kami</h2>
+                <div class="contact-wrapper">
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Nama Lengkap</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subjek</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Pesan</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+                        </form>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Alamat</h4>
+                                <p>Jl. Sudirman No. 123, Senayan, Jakarta Pusat, 12190, Indonesia</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>hello@voltcycle.id</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Telepon</h4>
+                                <p>+62 21 1234 5678</p>
+                            </div>
+                        </div>
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d106.8195613507864!3d-6.194741395493371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5390917b759%3A0x6b45e67356080477!2sMonas!5e0!3m2!1sen!2sid!4v1678886360244!5m2!1sen!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- =================== FOOTER =================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <p>&copy; 2024 VoltCycle Indonesia. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // --- Mobile Menu Toggle ---
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+
+            document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }));
+
+            // --- FAQ Accordion ---
+            const faqQuestions = document.querySelectorAll('.faq-question');
+
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const faqItem = question.parentElement;
+                    const isActive = faqItem.classList.contains('active');
+
+                    // Close all other items
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
+                    // Open the clicked item if it was not active
+                    if (!isActive) {
+                        faqItem.classList.add('active');
+                    }
+                });
+            });
+
+            // --- Contact Form Submission (Simulated) ---
+            const contactForm = document.getElementById('contactForm');
+
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent actual form submission
+
+                // Simple validation
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+
+                if (name && email && message) {
+                    alert(`Terima kasih, ${name}! Pesan Anda telah berhasil dikirim. Kami akan segera menghubungi Anda melalui ${email}.`);
+                    contactForm.reset(); // Reset form fields
+                } else {
+                    alert('Harap isi semua field yang wajib diisi.');
+                }
+            });
+
+        });
+    </script>
+
+</body>
+</html>

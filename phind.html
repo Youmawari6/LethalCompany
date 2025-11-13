@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechVerse Solutions - Transforming Ideas into Mobile Excellence</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Variabel Warna */
+        :root {
+            --primary-color: #1E3D59;
+            --secondary-color: #00FF9D;
+            --accent-color: #FFFFFF;
+            --bg-color: #F5F5F5;
+        }
+
+        /* Styling Dasar */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--primary-color);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--primary-color);
+            color: var(--accent-color);
+            padding: 1rem;
+            text-align: center;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1518770660430-4636190c6f5b?auto=format&fit=crop&w=1920');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-color);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 4rem 2rem;
+            background-color: var(--bg-color);
+        }
+
+        .feature-card {
+            background-color: var(--accent-color);
+            padding: 2rem;
+            margin: 1rem 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 4rem 2rem;
+        }
+
+        .service-card {
+            background-color: var(--accent-color);
+            padding: 2rem;
+            margin: 1rem 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 4rem 2rem;
+            background-color: var(--bg-color);
+        }
+
+        .project-card {
+            background-color: var(--accent-color);
+            padding: 2rem;
+            margin: 1rem 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 4rem 2rem;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: var(--accent-color);
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .feature-card,
+            .service-card,
+            .project-card {
+                margin: 1rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul style="display: flex; justify-content: center; gap: 2rem; list-style: none;">
+                <li><a href="#home" style="color: var(--accent-color); text-decoration: none;">Beranda</a></li>
+                <li><a href="#tentang" style="color: var(--accent-color); text-decoration: none;">Tentang</a></li>
+                <li><a href="#layanan" style="color: var(--accent-color); text-decoration: none;">Layanan</a></li>
+                <li><a href="#portofolio" style="color: var(--accent-color); text-decoration: none;">Portofolio</a></li>
+                <li><a href="#kontak" style="color: var(--accent-color); text-decoration: none;">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>Transformasi Digital Anda Dimulai Di Sini</h1>
+        <p>Pengembangan Aplikasi Mobile Terbaik untuk Bisnis Anda</p>
+        <button class="cta-button">Mulai Projek Sekarang</button>
+    </section>
+
+    <section class="features" id="tentang">
+        <h2>Tentang Kami</h2>
+        <div class="feature-card">
+            <h3>Visi & Misi</h3>
+            <p>Menjadi mitra terpercaya dalam transformasi digital melalui solusi mobile inovatif</p>
+        </div>
+        <div class="feature-card">
+            <h3>Nilai Inti</h3>
+            <ul style="list-style: none; padding-left: 0;">
+                <li>Inovasi Berkelanjutan</li>
+                <li>Keunggulan Teknologi</li>
+                <li>Orientasi Pelanggan</li>
+                <li>Kerja Sama Tim</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="services" id="layanan">
+        <h2>Layanan Kami</h2>
+        <div class="service-card">
+            <h3>Mobile App Development</h3>
+            <ul style="list-style: none; padding-left: 0;">
+                <li>Native iOS & Android Development</li>
+                <li>Cross-platform Solutions</li>
+                <li>Progressive Web Apps</li>
+            </ul>
+        </div>
+        <div class="service-card">
+            <h3>Digital Transformation</h3>
+            <ul style="list-style: none; padding-left: 0;">
+                <li>System Integration</li>
+                <li>API Development</li>
+                <li>Cloud Migration</li>
+            </ul>
+        </div>
+        <div class="service-card">
+            <h3>Maintenance & Support</h3>
+            <ul style="list-style: none; padding-left: 0;">
+                <li>Performance Optimization</li>
+                <li>Security Updates</li>
+                <li>Feature Enhancement</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="portfolio" id="portofolio">
+        <h2>Portofolio</h2>
+        <div class="project-card">
+            <h3>HealthTracker</h3>
+            <p><strong>Tantangan:</strong> Monitoring kesehatan real-time</p>
+            <p><strong>Solusi:</strong> Native iOS app dengan integrasi wearable devices</p>
+            <p><strong>Hasil:</strong> 90% peningkatan engagement pengguna</p>
+        </div>
+        <div class="project-card">
+            <h3>FoodDeliver</h3>
+            <p><strong>Tantangan:</strong> Sistem delivery efisien</p>
+            <p><strong>Solusi:</strong> Cross-platform app dengan real-time tracking</p>
+            <p><strong>Hasil:</strong> 45% peningkatan pesanan</p>
+        </div>
+        <div class="project-card">
+            <h3>EduLearn</h3>
+            <p><strong>Tantangan:</strong> Platform pembelajaran interaktif</p>
+            <p><strong>Solusi:</strong> Progressive Web App dengan offline capability</p>
+           

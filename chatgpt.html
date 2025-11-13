@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="EcoRide Labs — Ride Clean. Live Green. E-Bike ramah lingkungan untuk kota cerdas." />
+  <title>EcoRide Labs | Ride Clean. Live Green.</title>
+  <style>
+    * {margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+    body {background:#fff;color:#222;font-size:16px;line-height:1.6;}
+    header {display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;background:#2E8B57;color:#fff;position:sticky;top:0;z-index:10;}
+    header h1 {font-size:1.5rem;}
+    nav a {color:#fff;margin:0 0.75rem;text-decoration:none;font-weight:500;}
+    nav a:hover {text-decoration:underline;}
+    .cta-btn {background:#FF8C42;color:#fff;padding:0.5rem 1rem;border-radius:0.5rem;text-decoration:none;font-weight:bold;}
+    .cta-btn:hover {background:#e67c35;}
+
+    .hero {display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:3rem 2rem;background:#E6E9EE;}
+    .hero-text {flex:1;min-width:300px;}
+    .hero-text h2 {font-size:2.5rem;color:#2E8B57;margin-bottom:1rem;}
+    .hero-text p {margin-bottom:1.5rem;}
+    .hero-text .buttons a {margin-right:1rem;}
+    .hero-img {flex:1;min-width:300px;text-align:center;}
+    .hero-img img {max-width:100%;height:auto;}
+
+    .features {display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;padding:3rem 2rem;background:#fff;}
+    .feature {background:#f9f9f9;padding:1.5rem;border-radius:1rem;box-shadow:0 2px 5px rgba(0,0,0,0.1);}
+    .feature h3 {color:#2E8B57;margin-bottom:0.5rem;}
+
+    .services {padding:3rem 2rem;background:#E6E9EE;}
+    .services h2 {text-align:center;color:#2E8B57;margin-bottom:2rem;}
+    .service-list {display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;}
+    .service {background:#fff;padding:1.5rem;border-radius:1rem;box-shadow:0 2px 5px rgba(0,0,0,0.1);}
+    .service h3 {margin-bottom:0.5rem;}
+
+    .portfolio {padding:3rem 2rem;}
+    .portfolio h2 {text-align:center;color:#2E8B57;margin-bottom:2rem;}
+    .portfolio-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;}
+    .project {background:#fff;border-radius:1rem;overflow:hidden;box-shadow:0 2px 5px rgba(0,0,0,0.1);}
+    .project img {width:100%;height:180px;object-fit:cover;}
+    .project-content {padding:1rem;}
+
+    .contact {display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;padding:3rem 2rem;background:#E6E9EE;}
+    .contact-form {flex:1;min-width:300px;margin-bottom:2rem;}
+    .contact-form form {display:flex;flex-direction:column;gap:1rem;}
+    .contact-form input,.contact-form textarea,.contact-form select {padding:0.75rem;border:1px solid #ccc;border-radius:0.5rem;}
+    .contact-form button {background:#2E8B57;color:#fff;padding:0.75rem;border:none;border-radius:0.5rem;cursor:pointer;}
+    .contact-form button:hover {background:#1F6B45;}
+    .contact-info {flex:1;min-width:300px;}
+    iframe {border:0;width:100%;height:300px;border-radius:0.5rem;}
+
+    footer {background:#22252A;color:#fff;text-align:center;padding:2rem;}
+
+    @media(max-width:768px){
+      .hero{flex-direction:column;}
+      .contact{flex-direction:column;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>EcoRide Labs</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">Tentang</a>
+      <a href="#services">Layanan</a>
+      <a href="#portfolio">Portofolio</a>
+      <a href="#contact">Kontak</a>
+    </nav>
+    <a href="#contact" class="cta-btn">Hubungi Sales</a>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <h2>Ride Clean. Live Green.</h2>
+      <p>Kami merancang e-bike ramah lingkungan dan solusi fleet pintar untuk kota yang lebih bersih dan perjalanan yang lebih cerdas.</p>
+      <div class="buttons">
+        <a href="#contact" class="cta-btn">Book a Demo</a>
+        <a href="#services" class="cta-btn" style="background:#1F6B45;">Lihat Layanan</a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="https://via.placeholder.com/500x350?text=E-Bike+EcoRide" alt="E-Bike Ilustrasi" />
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="feature"><h3>Desain Ergonomis</h3><p>Baterai tahan lama dan desain anti-theft.</p></div>
+    <div class="feature"><h3>Solusi Fleet</h3><p>Untuk bisnis, universitas, dan pemerintah kota.</p></div>
+    <div class="feature"><h3>IoT & Pemantauan</h3><p>Platform cloud untuk analitik armada real-time.</p></div>
+  </section>
+
+  <section class="services" id="services">
+    <h2>Layanan Kami</h2>
+    <div class="service-list">
+      <div class="service">
+        <h3>Urban Commuter — ERL-City</h3>
+        <p>E-bike ringkas, baterai 80km, desain anti-theft.</p>
+      </div>
+      <div class="service">
+        <h3>Fleet Management — ERL-Fleet</h3>
+        <p>Hardware dan dashboard untuk manajemen armada.</p>
+      </div>
+      <div class="service">
+        <h3>Custom Integration</h3>
+        <p>Konsultasi charging, integrasi API, deployment.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio" id="portfolio">
+    <h2>Portofolio Kami</h2>
+    <div class="portfolio-grid">
+      <div class="project">
+        <img src="https://via.placeholder.com/400x250?text=Project+1" alt="GreenCampus Shuttle" />
+        <div class="project-content">
+          <h3>GreenCampus Shuttle</h3>
+          <p>Deploy 50 unit e-bike untuk Universitas Semesta.</p>
+        </div>
+      </div>
+      <div class="project">
+        <img src="https://via.placeholder.com/400x250?text=Project+2" alt="CityShare Pilot" />
+        <div class="project-content">
+          <h3>CityShare Pilot</h3>
+          <p>Integrasi e-bike publik di Kota Pelita.</p>
+        </div>
+      </div>
+      <div class="project">
+        <img src="https://via.placeholder.com/400x250?text=Project+3" alt="Corporate Mobility" />
+        <div class="project-content">
+          <h3>Corporate Mobility</h3>
+          <p>Program leasing untuk perusahaan hijau.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="contact-form">
+      <h2>Hubungi Kami</h2>
+      <form onsubmit="event.preventDefault(); alert('Pesan terkirim!');">
+        <input type="text" placeholder="Nama" required />
+        <input type="email" placeholder="Email" required />
+        <input type="text" placeholder="Perusahaan" />
+        <select>
+          <option>Pilih Layanan</option>
+          <option>ERL-City</option>
+          <option>ERL-Fleet</option>
+          <option>Custom Integration</option>
+        </select>
+        <textarea placeholder="Pesan Anda..." rows="4" required></textarea>
+        <label><input type="checkbox" required /> Saya setuju dengan kebijakan privasi</label>
+        <button type="submit">Kirim Pesan</button>
+      </form>
+    </div>
+    <div class="contact-info">
+      <h3>Alamat Kami</h3>
+      <p>EcoRide Labs HQ, Jl. Hijau Raya No.88, Kota Semesta, Prov. Nusantara 12345</p>
+      <iframe src="https://www.google.com/maps?q=EcoRide+Labs+HQ+Jl.+Hijau+Raya+No+88+Kota+Semesta&output=embed"></iframe>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 EcoRide Labs — Ride Clean. Live Green.</p>
+  </footer>
+</body>
+</html>
